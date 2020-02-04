@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>weatherreport</title>
+</head>
+<body>{% block content %}
+
+
+<h1>weather of {{weather.city}}</h1>
+
+<span><img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="icon">
+<p>temp:{{weather.temperature}}</p>
+<p>dis:{{weather.discription}}</P>
+
+
+
+<form action='/currentweather/cityname/' method="post">
+{% csrf_token %}
+<label for="cityname"><strong>type City:</strong></label>
+<input id="cityname" type="text" name="cityname" autofocus>
+<input type="submit" value="ok">
+</form>
+
+{% endblock %}
+</body>
+</html>
