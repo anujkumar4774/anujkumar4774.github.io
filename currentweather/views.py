@@ -18,11 +18,11 @@ def index(request):
    
 
 
-    return render(request,'index.html',{'weather':city_del})
+    return render(request,'templates/index.html',{'weather':city_del})
 def cityinfo(request):
     if request.method=='POST':
         cityname=NameForm(request.POST)
     else:
         cityname=NameForm()
-    return render(request,"index.html",{"weather":cityname})
+    return render(request,"templates/index.html",{"weather":cityname})
     
