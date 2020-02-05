@@ -15,14 +15,14 @@ def index(request):
         "discription":r["weather"][0]["description"],
         "temperature":r["main"]["temp"],
         "icon":r["weather"][0]["icon"]}
-    print(city_del)
+   
 
 
-    return render(request,'weatherindex.html',{'weather':city_del})
+    return render(request,'index.html',{'weather':city_del})
 def cityinfo(request):
     if request.method=='POST':
         cityname=NameForm(request.POST)
     else:
         cityname=NameForm()
-    return render(request,"weather2.html",{"weather":cityname})
+    return render(request,"index.html",{"weather":cityname})
     
